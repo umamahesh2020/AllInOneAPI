@@ -41,6 +41,7 @@ namespace AllInOneAPI
 
             services.AddTransient<INoteRepository, NoteRepository>();
             services.AddTransient<IFRRepository, FRRepository>();
+            services.AddTransient<IFRImageResponseRespository, FRImageResponseRespository>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }        
 
