@@ -11,5 +11,8 @@ namespace AllInOneAPI.Models
         public string ThumbnailUrl { get; set; } = string.Empty;
         public long ImageSize { get; set; } = 0L;
         public int UploadedImageCount { get; set; }
+        public string EnrollementId { get; set; }
+        public int EnrollementTypeId { get; set; }
+        public string ImagePath { get; set; }
     }
 }

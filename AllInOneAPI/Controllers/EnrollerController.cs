@@ -6,7 +6,6 @@ using AllInOneAPI.Interfaces;
 using AllInOneAPI.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 
 namespace AllInOneAPI.Controllers
 {
@@ -58,24 +57,15 @@ namespace AllInOneAPI.Controllers
         [HttpPost]
         public void Post([FromBody] EnrollerParam enrollerParam)
         {
-            var enrollementDetails =  enrollerParam.Enrollement;
-            enrollementDetails.FirstName = "Sreekanth";
-            enrollementDetails.SecondName ="Kanth" ;
-            enrollementDetails.LastName = "B";
-            enrollementDetails.Age  = 25;
-            enrollementDetails.DateOfBirth  = DateTime.Now;
-            enrollementDetails.Gender = "Male";
-            enrollementDetails.MobileNumber = 9742477979 ;
-            enrollementDetails.Email = "Sreekanth";
-            //enrollementDetails.EnrollerImages.AddRange(new EnrollementImageModel { ImageSize = 10, ThumbnailUrl = "", UploadedImageCount = 5, Url = "" });
-            enrollerParam.Body  = JsonConvert.SerializeObject(enrollementDetails);
-
             _frRepository.AddFREnrollerDetails(new EnrollerDetail
             {
                 Id = enrollerParam.Id,
                 Body = enrollerParam.Body,
                 UpdatedOn = DateTime.UtcNow,
-                UserId = enrollerParam.UserId
+                UserId = enrollerParam.UserId,
+                EnrolllerType = enrollerParam.EnrolllerType,
+                MobileNumber = enrollerParam.MobileNumber,
+                Email = enrollerParam.Email
             });
         }
 
@@ -94,6 +84,5 @@ namespace AllInOneAPI.Controllers
         {
             _frRepository.RemoveEnrollerDetail(id);
         }
-
     }
 }

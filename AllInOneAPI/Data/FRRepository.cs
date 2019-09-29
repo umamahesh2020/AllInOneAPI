@@ -49,7 +49,6 @@ namespace AllInOneAPI.Data
             }
         }
     
-
         public async Task<IEnumerable<EnrollerDetail>> GetAllEnrollerDetails()
         {
             try
@@ -174,8 +173,6 @@ namespace AllInOneAPI.Data
                 throw ex;
             }
         }
-
-
 
         private ObjectId GetInternalId(string id)
         {

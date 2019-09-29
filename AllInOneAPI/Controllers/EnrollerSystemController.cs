@@ -30,7 +30,7 @@ namespace AllInOneAPI.Controllers
                 {
                     EnrollerID = Guid.NewGuid().ToString(),
                     FirstName = "Sreekanth",
-                    SecondName = "Kanth",
+                    MiddleName = "Kanth",
                     LastName = "B",
                     Age = 25,
                     DateOfBirth = DateTime.Now,

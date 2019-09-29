@@ -24,5 +24,9 @@ namespace AllInOneAPI.Models
         public EnrollerImage HeaderImage { get; set; }
 
         public int UserId { get; set; } = 0;
+
+        public string Email { get; set; }
+
+        public string MobileNumber { get; set; }
     }
 }
