@@ -53,9 +53,7 @@ namespace AllInOneAPI.Controllers
                     UserId = 1,
                     HeaderImage = new EnrollerImage
                     {
-                        ImageSize = 13,
-                        Url = "http://localhost/image2.png",
-                        ThumbnailUrl = "http://localhost/image2_small.png",
+                        Url = "http://localhost/image2.png",                       
                         UploadedImageCount = 10
                     }
                 });
@@ -68,10 +66,8 @@ namespace AllInOneAPI.Controllers
                     UpdatedOn = DateTime.UtcNow,
                     UserId = 1,
                     HeaderImage = new EnrollerImage
-                    {
-                        ImageSize = 13,
-                        Url = "http://localhost/image2.png",
-                        ThumbnailUrl = "http://localhost/image2_small.png"
+                    {                      
+                        Url = "http://localhost/image2.png",                      
                     }
                 });
 
@@ -83,10 +79,8 @@ namespace AllInOneAPI.Controllers
                     UpdatedOn = DateTime.UtcNow,
                     UserId = 1,
                     HeaderImage = new EnrollerImage
-                    {
-                        ImageSize = 14,
-                        Url = "http://localhost/image3.png",
-                        ThumbnailUrl = "http://localhost/image3_small.png"
+                    {                       
+                        Url = "http://localhost/image3.png",                        
                     }
                 });
 
@@ -98,10 +92,8 @@ namespace AllInOneAPI.Controllers
                     UpdatedOn = DateTime.UtcNow,
                     UserId = 1,
                     HeaderImage = new EnrollerImage
-                    {
-                        ImageSize = 15,
-                        Url = "http://localhost/image4.png",
-                        ThumbnailUrl = "http://localhost/image4_small.png"
+                    {                        
+                        Url = "http://localhost/image4.png",                      
                     }
                 });
 
