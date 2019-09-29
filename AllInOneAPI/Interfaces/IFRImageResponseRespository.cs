@@ -9,11 +9,8 @@ namespace AllInOneAPI.Interfaces
     public interface IFRImageResponseRespository
     {
         Task AddFRResponseDetail(FRResponseDetail item);
-
         Task<IEnumerable<FRResponseDetail>> GetAllFRResponseDetail();
-
         Task<bool> RemoveAllImageResponseDetails();
-
         Task<string> CreateIndex();
     }
 }

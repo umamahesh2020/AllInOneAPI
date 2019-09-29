@@ -14,6 +14,6 @@ namespace AllInOneAPI.Models
         public int EnrolllerType { get; set; }
         public string Email { get; set; }
         public string MobileNumber { get; set; }
-
+        public string ProcessedImageLocation { get; set; }
     }
 }

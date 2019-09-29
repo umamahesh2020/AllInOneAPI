@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AllInOneAPI.Infrastructure;
 using AllInOneAPI.Interfaces;
@@ -42,10 +40,10 @@ namespace AllInOneAPI.Controllers
                UpdatedOn = imageResponse.UpdatedOn,
                EnrolllerType = imageResponse.EnrolllerType,
                MobileNumber = imageResponse.MobileNumber,
-               Email = imageResponse.Email
+               Email = imageResponse.Email,
+               ProcessedImageLocation = imageResponse.ProcessedImageLocation
+               
             });
         }
-
-
     }
 }
