@@ -65,7 +65,8 @@ namespace AllInOneAPI.Controllers
                 UserId = enrollerParam.UserId,
                 EnrolllerType = enrollerParam.EnrolllerType,
                 MobileNumber = enrollerParam.MobileNumber,
-                Email = enrollerParam.Email
+                Email = enrollerParam.Email,
+                ImageDetailsForPikleGeneration = enrollerParam.ImageDetailsForPikleGeneration
             });
         }
 
