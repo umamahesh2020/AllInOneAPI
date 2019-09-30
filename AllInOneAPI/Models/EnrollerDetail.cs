@@ -29,6 +29,6 @@ namespace AllInOneAPI.Models
 
         public string MobileNumber { get; set; }
 
-        public KeyValuePair<string, string > ImageDetailsForPikleGeneration { get; set; }
+        public List<KeyValuePair<string, string>> ImageDetailsForPikleGeneration { get; set; }
     }
 }
