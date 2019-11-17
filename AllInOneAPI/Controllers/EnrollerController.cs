@@ -15,10 +15,12 @@ namespace AllInOneAPI.Controllers
     public class EnrollerController : ControllerBase
     {
         private readonly IFRRepository _frRepository;
+        private readonly IRMQConnector _rmqConnector;
 
-        public EnrollerController(IFRRepository frRepository)
+        public EnrollerController(IFRRepository frRepository, IRMQConnector rmqConnector)
         {
             _frRepository = frRepository;
+            _rmqConnector = rmqConnector;
         }
 
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -57,6 +59,9 @@ namespace AllInOneAPI.Controllers
         [HttpPost]
         public void Post([FromBody] EnrollerParam enrollerParam)
         {
+            // Publish to RMQ fro Pickle Generation.
+            _rmqConnector.PublishMessage(enrollerParam.ImageDetailsForPikleGeneration);
+
             _frRepository.AddFREnrollerDetails(new EnrollerDetail
             {
                 Id = enrollerParam.Id,

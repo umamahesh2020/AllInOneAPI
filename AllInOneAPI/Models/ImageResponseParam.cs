@@ -8,16 +8,16 @@ namespace AllInOneAPI.Models
 {
     public class ImageResponseParam
     {
-        public string EnrollementId { get; set; } = string.Empty;
-        public string Body { get; set; } = string.Empty;
 
-        [BsonDateTimeOptions]
-        public DateTime UpdatedOn { get; set; } = DateTime.UtcNow;
-
-        public int EnrolllerType { get; set; }
-        public string Email { get; set; }
-        public string MobileNumber { get; set; }
-
-        public string ProcessedImageLocation { get; set; }
+        public List<Datum> Data { get; set; }
+    }
+    public class Datum
+    {
+        public string Body { get; set; }
+        public string OCRDateTime { get; set; }
+        public string ImageReLocation { get; set; }
+        public string ImageFTPPath { get; set; }
+        public string CameraIpAddress { get; set; }
+        public string CameraName { get; set; }
     }
 }

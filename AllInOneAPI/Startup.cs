@@ -1,4 +1,5 @@
 ﻿using AllInOneAPI.Data;
+using AllInOneAPI.Infrastructure;
 using AllInOneAPI.Interfaces;
 using AllInOneAPI.Models;
 using Microsoft.AspNetCore.Builder;
@@ -42,6 +43,7 @@ namespace AllInOneAPI
             services.AddTransient<INoteRepository, NoteRepository>();
             services.AddTransient<IFRRepository, FRRepository>();
             services.AddTransient<IFRImageResponseRespository, FRImageResponseRespository>();
+            services.AddTransient<IRMQConnector, RMQConnector>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }        
 

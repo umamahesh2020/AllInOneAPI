@@ -1,5 +1,6 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
@@ -16,6 +17,7 @@ namespace AllInOneAPI.Models
 
         public int EnrolllerType { get; set; }
 
+        [JsonProperty("Body")]
         public string Body { get; set; } = string.Empty;
 
         [BsonDateTimeOptions]

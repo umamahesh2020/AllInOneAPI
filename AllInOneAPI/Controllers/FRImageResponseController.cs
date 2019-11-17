@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using AllInOneAPI.Infrastructure;
 using AllInOneAPI.Interfaces;
@@ -33,17 +34,24 @@ namespace AllInOneAPI.Controllers
         [HttpPost]
         public void Post([FromBody] ImageResponseParam imageResponse)
         {
-            _frImageResponseRespository.AddFRResponseDetail(new FRResponseDetail
+            if(imageResponse?.Data?.Count > 0)
             {
-               EnrollementId = imageResponse.EnrollementId,
-               Body = imageResponse.Body,
-               UpdatedOn = imageResponse.UpdatedOn,
-               EnrolllerType = imageResponse.EnrolllerType,
-               MobileNumber = imageResponse.MobileNumber,
-               Email = imageResponse.Email,
-               ProcessedImageLocation = imageResponse.ProcessedImageLocation
-               
-            });
+                foreach (var response in imageResponse.Data)
+                {
+                    _frImageResponseRespository.AddFRResponseDetail(new FRResponseDetail
+                    {
+                        Body = response.Body,
+                        OCRDateTime = response.OCRDateTime,
+                        ImageReLocation = response.ImageReLocation,
+                        ImageFTPPath = response.ImageFTPPath,
+                        CameraName = response.CameraName,
+                        CameraIpAddress = response.CameraIpAddress
+
+                    });
+
+                }
+            }
+            
         }
     }
 }
